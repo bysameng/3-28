@@ -5,6 +5,7 @@ public class BallRoller : MonoBehaviour {
 
 	Rigidbody myRigidbody;
 
+	int HP = 100;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +14,7 @@ public class BallRoller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//very basic movement controls
 		if (Input.GetKey("w")){
 			myRigidbody.AddForce(Vector3.forward * 100f);
 		}
@@ -24,6 +26,14 @@ public class BallRoller : MonoBehaviour {
 		}
 		if (Input.GetKey("d")){
 			myRigidbody.AddForce(Vector3.right * 100f);
+		}
+	}
+
+	//example function.
+	public void TakeDamage(int damage){
+		HP -= damage;	
+		if (HP < 0){
+			Destroy(this.gameObject);
 		}
 	}
 

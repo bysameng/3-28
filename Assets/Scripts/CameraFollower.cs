@@ -3,9 +3,10 @@ using System.Collections;
 
 public class CameraFollower : MonoBehaviour {
 	public static CameraFollower main;
+	public Vector3 offset;
 
 	public GameObject objectToFollow;
-	public Vector3 offset;
+
 
 	void Start(){
 		main = this;
@@ -20,8 +21,10 @@ public class CameraFollower : MonoBehaviour {
 		}
 	}
 
+
 	public void Track(GameObject g){
 		objectToFollow = g;
 	}
+
 
 }
